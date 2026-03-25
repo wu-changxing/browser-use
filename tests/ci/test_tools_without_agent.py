@@ -182,7 +182,7 @@ class TestToolsWithoutAgent:
 		await tools.navigate(url=f'{base_url}/links', new_tab=False, browser_session=browser_session)
 		await asyncio.sleep(0.3)
 
-		result = await tools.scroll(direction='down', amount=3, browser_session=browser_session)
+		result = await tools.scroll(down=True, pages=3, browser_session=browser_session)
 		assert isinstance(result, ActionResult)
 		assert result.extracted_content is not None
 
